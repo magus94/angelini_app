@@ -15,13 +15,13 @@ class Corpo_tecnico_model extends CI_Model {
     public function salvar() {
         $data = $this->input->post();
 
-        $config['upload_path'] = '.assets/images/membros';
+        $config['upload_path'] = './assets/images/membros';
         $config['allowed_types'] = 'gif|jpg|png|jpeg|svg';
         $config['max_size'] = 0;
         $this->load->library('upload', $config);
 
-        if($this->upload->do_upload('imagem')){
-            $data['imagem'] = $this->upload->file_name;
+        if($this->upload->do_upload('foto')){
+            $data['foto'] = $this->upload->file_name;
             $this->db->insert('corpo_tecnico', $data);
             return TRUE;
         }else{
@@ -37,8 +37,8 @@ class Corpo_tecnico_model extends CI_Model {
         $config['max_size'] = 0;
         $this->load->library('upload', $config);
 
-        if($this->upload->do_upload('imagem')){
-            $data['imagem'] = $this->upload->file_name;
+        if($this->upload->do_upload('foto')){
+            $data['foto'] = $this->upload->file_name;
         }
 
         $this->db->where('idCorpoTecnico', $data['idCorpoTecnico']);

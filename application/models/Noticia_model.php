@@ -37,7 +37,7 @@ class Noticia_model extends CI_Model {
     public function atualizar() {
         $data = $this->input->post();
 
-        $config['upload_path'] = '.assets/images/noticias';
+        $config['upload_path'] = './assets/images/noticias';
         $config['allowed_types'] = 'gif|jpg|png|jpeg|svg';
         $config['max_size'] = 0;
         $this->load->library('upload', $config);

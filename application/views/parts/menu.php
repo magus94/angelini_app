@@ -39,6 +39,13 @@
                     <a href="<?= base_url('/videos') ?>"> <i class="menu-icon fa fa-youtube"></i>Videos </a>
                 </li>
 
+                <hr>
+
+                <h3 class="menu-title">Contato</h3>
+                <li>
+                    <a href="<?= base_url('/contato') ?>"> <i class="menu-icon fa fa-envelope-o"></i>Ver Agendamentos </a>
+                </li>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>

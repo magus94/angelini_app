@@ -133,6 +133,33 @@ function apagarFeedback(id) {
 	});
 }
 
+function apagarAgendamento(id) {
+	$.confirm({
+		title: 'Apagar Agendamento?',
+		theme: 'modern',
+		content: "Deseja realmente deletar este agendamento.",
+		closeIcon: true,
+		buttons: {
+			yes: {
+				text: 'Apagar',
+				btnClass: 'btn btn-danger',
+				action: function () {
+					$.post(`${base_url}contato/apagar/`, { id : id} ).done(window.location.reload());				}
+			},
+			no: {
+				text: 'Cancelar',
+				action: function () {
+					$.alert({
+						title: 'Cancelado!',
+						theme: 'modern',
+						content: "Agendamento não apagado!"
+					})
+				}
+			},
+		}
+	});
+}
+
 jQuery(document).ready(function($) {
 
 	"use strict";
